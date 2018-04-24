@@ -14,26 +14,25 @@ const options = {
     },
     json: true //Automatically parses the Json string 
 }
-
+/*
 rp(options)
     .then ((response => {
         console.log(response.artists[0].strGenre); // si no haces parse json te lo devuelve en string
-    }))
+    }));
     .catch( err => {
         console.log("err");
-    })
-
+    });
+*/
 
     //3.Hacer una petición por autor y devolver la lista de sus libros 
     //(http://openlibrary.org/search.json?author=asimov)
 
     rp(options)
-        .then ((response => {
-        response.docs.forEach(
-            (str) => {
-                console.log(`${str.title_suggest} - ${str.publish_date}`)   
-        })})); // si no haces parse json te lo devuelve en string
-    
+        .then (response => {
+            response.docs.forEach(books => {console.log(`${books.title_suggest} - ${books.first_publish_year}`)})
+        })
         .catch(err => {
-        console.log("err");
-    })
+            console.log("error")
+        })
+    //(str) => {
+   //     console.log(`${str.title_suggest} - ${str.publish_date}`)   
