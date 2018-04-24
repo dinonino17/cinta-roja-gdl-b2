@@ -126,11 +126,12 @@ const resultado4 = arreglocaps
         for (i in split){
             if(i%2==0){
                split[i] = split[i].toUpperCase();
-
-            }
+            }else {split[i] = split[i].toLowerCase()}
         }
         return split
          .reduce((prev,curr) => prev + " " +curr)
+         // toma los elementos de un objeto primero el lugar 1 y 2 y hace la función
+         //indicada
     })
 console.log(resultado4);
 
