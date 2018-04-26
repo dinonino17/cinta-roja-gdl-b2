@@ -51,14 +51,14 @@ app.post('/users', (req,res) => {
 })
 
 app.put('/users', (req,res)=>{
-    const { id } = req.body
+    const {id} = req.body
     if(id){
         users.forEach(usr => {
-            if(usr.id === id){
+            if(usr.id == id){
                 if(req.body.name){
                     usr.name=req.body.name
                 }
-                if(re.body.lastname){
+                if(req.body.lastname){
                     usr.lastname = req.body.lastname
                 }
             }
@@ -67,6 +67,12 @@ app.put('/users', (req,res)=>{
             .filter(usr => {usr.id == id})
             //if results.length >0 ---- res.json(results[0])
             //else usuario no encontrado
+            if(results.length > 0){
+                res.json(results)
+            }else{
+                console.log(users)
+                res.status(404).json({error : 'usuario no encontrado'})
+            }
     }else{
         res.status(400).json({error: "El parametro id es requerido"})}
 
