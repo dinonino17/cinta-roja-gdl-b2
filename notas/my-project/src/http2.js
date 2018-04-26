@@ -98,7 +98,7 @@ pokeprim = () => {
     let numero=0;
     let jsonResponse = {};
     while(numero<=151){
-        const options6 = {
+        let options6 = {
             method: 'GET',
             uri: `http://pokeapi.co/api/v2/pokemon/${numero}`,
             headers: { 
@@ -107,14 +107,15 @@ pokeprim = () => {
             json: true 
         }
         rp(options6)
-            .then(response => {return (
+            .then(response => { 
                 jsonResponse = {
                     nombre : response.forms[0].name,
                     moves: response.moves.map(movenow => {return movenow.move.name}) ,
                     tipos: response.types.map(tipos => {return tipos.type.name}) ,
                     peso: response.weight,
-                }
-            )})
+                 }
+                 console.log(jsonResponse)
+            })
             .catch(err => console.log("error"))
             numero++;
 }
