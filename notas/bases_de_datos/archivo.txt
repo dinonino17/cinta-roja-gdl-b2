@@ -1,0 +1,15 @@
+Es un conjunto de datos relacionados entre si.
+Propiedades
+-independencia logica y fisica de los datos
+-redundancia minima
+-acceso concurrente por varios usuarios
+-integridad de los datos
+-consultas complejas optimizadas
+-seguridad de aceeso y auditoria
+-respaldo y recuperacion
+Dos tipos principales:
+MySQL, los datos tienen relacion (1-n) (1-1) (n-n)
+ NoSQL: Redis, mongoDB,membase, couchDB, los datos no tienen relacion
+ GraphQL
+
+ ORM - interediario entre el lenguaje de programaciòn para conectar con una base de datos

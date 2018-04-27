@@ -63,14 +63,14 @@ app.put('/users', (req,res)=>{
                 }
             }
         })
-        const results = users
-            .filter(usr => {usr.id == id})
+            const result = users
+                .filter(usr => usr.id == id)
             //if results.length >0 ---- res.json(results[0])
             //else usuario no encontrado
-            if(results.length > 0){
-                res.json(results)
+            if(result.length > 0){
+                res.json(results[0])
             }else{
-                console.log(users)
+                console.log(id)
                 res.status(404).json({error : 'usuario no encontrado'})
             }
     }else{
