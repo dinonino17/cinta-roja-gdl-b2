@@ -1,0 +1,19 @@
+Un bot imita algun comportamiento humano.
+chatbot - simula tener una conversacion
+
+¿Por que son buenos?
+Siempre estan disponibles
+A veces una aplicacion o web no siempre es la solución
+Pueden desarrollarse en plataformas ya existentes
+Ej. Cleverbot en Facebook Messenger (Intenta pasar el test de T)
+    Simsimi
+
+No finjir que es humano
+Mantenerlo lo mas simple posible
+Cuidar lo que responde
+Optimizar para el usuario final (KittyBUS)
+Proporcionar una opciòn de escape
+Usar estructura de entrada
+api.ai
+wit.ai
+
