@@ -1,0 +1,10 @@
+VirtualDOM
+Guadar una copia del DOM y solo actualiza las partes que cambiaron en la página principal 
+ahorrando recursos.
+
+Usa JSX
+
+Todo es un componente. Componente de clase y funcional
+Componente de clase: compnentes que van a manejar su propio estado, se meten el logica. 
+Componentes funcionales: son solo de vista, reciben información del padre y la muestran al usuario.
+
