@@ -1,3 +1,10 @@
 #componente{
     background-color: black;
 }
+
+#mainJumbo{
+    background-image: url(delfi-de-la-rua-294635-unsplash.jpg);
+    background-color: white;
+    text-align: center;
+    height: 400px;
+}
