@@ -13,6 +13,8 @@ class MySecondComponent extends Component{
                 <img src={this.props.image} />
                 <p class="lead">{this.props.plainText}</p>
             </div>
+
+             
         ) 
     }
 }
