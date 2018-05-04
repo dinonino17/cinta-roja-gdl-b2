@@ -16,69 +16,46 @@ var persons = [{
   age: 24
 }];
 
-var name = "Jorge";
-var age = "24";
-var address = "";
-
-var getLocation = function getLocation(personas) {
-  personas.forEach(function (element) {
-    if (element.location) {
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "h1",
-          null,
-          element.name
-        ),
-        ",",
-        React.createElement(
-          "h1",
-          null,
-          element.age
-        ),
-        ",",
-        React.createElement(
-          "h1",
-          null,
-          "Location: " + location
-        )
-      );
-    } else {
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "h1",
-          null,
-          element.name
-        ),
-        ",",
-        React.createElement(
-          "h1",
-          null,
-          element.age
-        ),
-        ",",
-        React.createElement(
-          "h3",
-          null,
-          "Location: Unknown"
-        )
-      );
-    }
-  });
+var getLocation = function getLocation(location) {
+  if (location.location) {
+    return React.createElement(
+      "h1",
+      null,
+      "Location: ",
+      location.location,
+      " "
+    );
+  }
+  return React.createElement(
+    "h1",
+    null,
+    "Location: Desconocida "
+  );
 };
 
 var template = React.createElement(
   "div",
   null,
-  React.createElement(
-    "p",
-    null,
-    getLocation(persons)
-  )
+  persons.map(function (person) {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "h1",
+        null,
+        person.name
+      ),
+      React.createElement(
+        "h1",
+        null,
+        "Age: ",
+        person.age
+      ),
+      getLocation(person)
+    );
+  })
 );
+
 var appRoot = document.getElementById('app');
 
 //1 parametro es un template (HTML) -JSX

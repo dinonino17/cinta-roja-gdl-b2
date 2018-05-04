@@ -14,26 +14,34 @@ const persons = [{
 {
   name:"Chubby",
   age:24,
-}]
+},
+]
 
-const name = "Jorge";
-const age = "24"
-const address = ""
-
-const getLocation = (personas) => {
-  personas.forEach((element) => {
-    if (element.location){
-      return (<div><h1>{element.name}</h1>,<h1>{element.age}</h1>,<h1>{"Location: " + location}</h1></div>);
-      }else{
-      return  (<div><h1>{element.name}</h1>,<h1>{element.age}</h1>,<h3>Location: Unknown</h3></div>);
-      }
-  })
+const getLocation = (location) =>{
+  if (location.location){
+      return <h1>Location: {location.location} </h1>    
+  }
+  return <h1>Location: Desconocida </h1>
 }
 
-const template = 
+
+var template = (
   <div>
-    <p>{getLocation(persons)}</p>
+      {persons.map(person=>{
+            return(
+            <div >
+              <h1>{person.name}</h1>
+              <h1>Age: {person.age}</h1>
+              {getLocation(person)} 
+          </div>)
+              
+          })
+      }
+
+  
   </div>
+);
+
 const appRoot = document.getElementById('app')
 
 //1 parametro es un template (HTML) -JSX
