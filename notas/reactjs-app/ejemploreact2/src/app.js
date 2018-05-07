@@ -15,6 +15,11 @@ const persons = [{
   name:"Chubby",
   age:24,
 },
+{
+  name: "Chuky",
+  age:25,
+  location:"Chimulco"
+},
 ]
 
 const getLocation = (location) =>{
@@ -47,3 +52,4 @@ const appRoot = document.getElementById('app')
 //1 parametro es un template (HTML) -JSX
 //2 parametro es donde lo vas a colocar
 ReactDOM.render(template,appRoot)
+//render recibe un JSX
