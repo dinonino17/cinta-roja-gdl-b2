@@ -31,6 +31,7 @@ class PokemonList extends Component {
                     name ={pokemon.name}
                     image ={pokemon.image}
                     number ={pokemon.number}
+                    onSelect={this.props.onSelect}
                     key = {pokemon.id}
                 />
                 )}
