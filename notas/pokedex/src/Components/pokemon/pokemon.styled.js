@@ -6,6 +6,7 @@ export const Image = styled.img`
   width: 30%;
   transition: all cubic-bezier(0.4, 0, 1, 1) 200ms;
 `;
+
 export const Data = styled.div`
   display: flex;
   justify-content: center;
@@ -20,6 +21,7 @@ export const Data = styled.div`
     margin-left: 5px;
   }
 `;
+
 export const PokemonCard = styled.div`
   display: flex;
   flex-direction: column;
