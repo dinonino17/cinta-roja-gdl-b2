@@ -32,6 +32,7 @@ class PokemonList extends Component{
         return(
             <Container>
                 {this.state.data.map(pokemon=>
+                    console.log(pokemon)
                     (<Pokemon
                         name={ pokemon.name}
                         image={pokemon.image}

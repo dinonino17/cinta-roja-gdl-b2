@@ -1,31 +1,40 @@
-import React, { Component } from 'react'
-import './App.css'
-import Head from '../Head/Head'
-import NavigationCategories from '../Head/NavigationCategories'
-import ProductCarousel from '../ProductIntro/ProductCarousel';
-import GeneralDivCat from '../ProductShow/GeneralDivCat';
-import ProductList from '../ProductShow/ProductList';
+import React, {Component} from 'react'
+import { Image,Data,ProductCard,ImgDiv,ProductName,ProductPrice,ProductBrand, ImageCarousel,ImgDivCarousel} from "./ProductCard.styled";
 import {Modal,OverlayTrigger,popover,tooltip,Button,Grid,Row,Col, Carousel} from "react-bootstrap";
 import { CarouselDiv } from "../Head/Head.styled";
 
-
-class App extends Component {
+class ProductSquare extends Component{
     constructor(props){
-      super(props);
-      this.state = {
-          show: false
-      };
-  }
+        super(props);
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
 
-  render() {
-    return (
-      <div>
-      <Head />
-      <NavigationCategories />
-      <ProductCarousel />
-      <GeneralDivCat categorieDiv="Products" />
-      <ProductList />
-      <Modal show={this.state.show} onHide={this.handleClose}>
+        this.state = {
+            show: false
+        };
+    }
+    handleClose(){
+        this.setState({show : false});
+
+    }
+    handleShow(){
+        this.setState({show: true});
+    }
+
+    render(){
+        return(
+            <div>
+            <ProductCard onClick={this.handleShow}>
+                <ImgDiv>
+                <Image src={this.props.image} />
+                </ImgDiv>
+                <Data>
+                    <span><ProductName>{this.props.name}</ProductName></span>
+                    <span><ProductPrice>{this.props.price}</ProductPrice></span>
+                    <span><ProductBrand>{this.props.brand}</ProductBrand></span>
+                </Data>
+                </ProductCard>
+                 <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>{this.props.name}</Modal.Title>
           </Modal.Header>
@@ -36,25 +45,15 @@ class App extends Component {
             <CarouselDiv>
            <Carousel>
             <Carousel.Item>
-                <img width={900} height={500} alt="900x500" src="https://i.ytimg.com/vi/ygBF35b-Hcg/maxresdefault.jpg" />
-                <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
+            <ImgDivCarousel>
+                <ImageCarousel src={this.props.image} />
+            </ImgDivCarousel>
             </Carousel.Item>
             <Carousel.Item>
                 <img width={900} height={500} alt="900x500" src="https://i.ytimg.com/vi/ygBF35b-Hcg/maxresdefault.jpg" />
-                <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img width={900} height={500} alt="900x500" src="https://i.ytimg.com/vi/ygBF35b-Hcg/maxresdefault.jpg" />
-                <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption>
             </Carousel.Item>
             </Carousel>
             </CarouselDiv>
@@ -76,9 +75,11 @@ class App extends Component {
             <Button onClick={this.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
-      </div>
-    );
-  }
+
+       </div>
+
+        )
+    }
 }
 
-export default App;
+export default ProductSquare
