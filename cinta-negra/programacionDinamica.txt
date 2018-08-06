@@ -1,0 +1,3 @@
+Memorización
+Las funciones recursivas suelen aumentar de manera exponencial 
+Usas una estructura de datos para evitar repetir

@@ -29,3 +29,9 @@ const getStairs = (n) => {
 const a=244;
 
 console.log(getStairs(a));
+console.log("recursivo");
+const stairs = (n) => {
+    if (n === 1) return 1;
+    if ()
+}
+console.log("dinamico");
